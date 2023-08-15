@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de socket</title>
+</head>
+<body>
+    <p>Mi ID de usuario es: <span id="userId"></span></p>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script>
+        const socket = io("http://localhost:3000");
+
+        socket.on('user_id', (userId) => {
+            document.getElementById('userId').textContent = userId;
+        });
+    </script>
+</body>
+</html>
